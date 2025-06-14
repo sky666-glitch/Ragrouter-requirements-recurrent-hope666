@@ -34,7 +34,7 @@ RAGRouter的具体设计原理如下：
 
 通過精心設計的 RAGRouter 路由策略模型，我們成功融合了語義與句法特徵，並結合檢索增强生成科技（RAG）與全參數微調 QWEN 7B 大模型，實現了對査詢問題難易程度的精准評估與動態模型選擇，這種設計充分利用了語義與句法特徵的互補性，並通過 RAG 科技提升了模型對複雜査詢的理解與處理能力，構建高效的大語言模型路由策略框架。
 
-![]()
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/RAGRouter%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 ## 一：训练数据集的选择
 
