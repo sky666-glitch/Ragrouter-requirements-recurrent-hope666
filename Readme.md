@@ -34,7 +34,7 @@ RAGRouter的具体设计原理如下：
 
 通過精心設計的 RAGRouter 路由策略模型，我們成功融合了語義與句法特徵，並結合檢索增强生成科技（RAG）與全參數微調 QWEN 7B 大模型，實現了對査詢問題難易程度的精准評估與動態模型選擇，這種設計充分利用了語義與句法特徵的互補性，並通過 RAG 科技提升了模型對複雜査詢的理解與處理能力，構建高效的大語言模型路由策略框架。
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\RAGRouter模型架构图.png)
+![]()
 
 ## 一：训练数据集的选择
 
@@ -52,13 +52,15 @@ Chatbot Arena Human Preference Dataset 是一個公開的數據集 ，託管在�
 
 数据集的具体呈现内容为（截取部分）：
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\chatbot平台数据集2.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/chatbot%E5%B9%B3%E5%8F%B0%E6%95%B0%E6%8D%AE%E9%9B%861.jpg)
+
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/chatbot%E5%B9%B3%E5%8F%B0%E6%95%B0%E6%8D%AE%E9%9B%862.jpg)
 
 LLM-judge-labeled datasets则也是一个公開的數據集，包含約 120,000 個樣本，数据托管在https://huggingface.co/datasets/routellm/gpt4_dataset，数据集的具体呈现内容为（截取部分）：
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\gpt 4 dataset图一.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/gpt%204%20dataset%E5%9B%BE%E4%B8%80.jpg)
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\gpt4 dataset图二.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/gpt4%20dataset%E5%9B%BE%E4%BA%8C.jpg)
 
 ## 二：数据增强
 
@@ -112,13 +114,13 @@ GSM8K：GSM8K（Grade School Math 8K）是由 Cobbe 等人在 2021 年提出的�
 
 大概通俗易懂说明一下，MMLU测试数据集大概由57个.csv文件组成，每个文件都涵盖不同的学科问题如mmlu_astronomy.csv文件则代表天文学领域的测试数据集，测试数据集的示例如截图所示：
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\mmlu示例图.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/mmlu%E7%A4%BA%E4%BE%8B%E5%9B%BE.jpg)
 
 mmlu的测试数据集大概内容就是包含三个列表，分别代表prompt即用户的提示词，强模型gpt-4-1106-preview的回答对与错（回答正确则用True表示，回答错误则用FALSE表示）以及弱模型mistralai/Mixtral-8x7B-Instruct-v0.1的回答对与错（回答正确则用True表示，回答错误则用FALSE表示）。
 
 GSM8k测试数据集由一个.csv文件组成，包含的是数学问题，测试数据集的示例如截图所示：
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\gsm8k示例图.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/gsm8k%E7%A4%BA%E4%BE%8B%E5%9B%BE.jpg)
 
 GSM8K的测试数据集大概内容就是包含五个列表，分别代表prompt即用户的提示词，强模型gpt-4-1106-preview的回答对与错（回答正确则用True表示，回答错误则用FALSE表示）和所回答的答案response以及弱模型mistralai/Mixtral-8x7B-Instruct-v0.1的回答对与错（回答正确则用True表示，回答错误则用FALSE表示）和所回答的答案response。
 
@@ -128,31 +130,31 @@ GSM8K的测试数据集大概内容就是包含五个列表，分别代表prompt
 
 表格一实验：RAGRouter与RouteLLM在MMLU测试数据集上进行性能比较
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\表格一.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/%E8%A1%A8%E6%A0%BC%E4%B8%80.jpg)
 
 
 
 表格二实验：RAGRouter与RouterLLM在GSM8K测试数据集上进行性能比较
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\表格二.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/%E8%A1%A8%E6%A0%BC%E4%BA%8C.jpg)
 
 
 
 表格三实验：多來源資料融合實現資料增強與否實驗對比
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\表格三.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/%E8%A1%A8%E6%A0%BC%E4%B8%89.jpg)
 
 表格四实验：資料採樣與否實驗對比
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\表格四.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/%E8%A1%A8%E6%A0%BC%E5%9B%9B.jpg)
 
 表格五实验：語義句法特徵提取與否實驗對比
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\表格五.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/%E8%A1%A8%E6%A0%BC%E4%BA%94.jpg)
 
 表格六实验：搭建 RAG 框架與否實驗對比
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\表格六.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/%E8%A1%A8%E6%A0%BC%E5%85%AD.jpg)
 
 
 
@@ -164,7 +166,7 @@ RouteLLM的官网地址为：https://github.com/lm-sys/RouteLLM/tree/main，Rout
 
 AUTODL的示例图如下：
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\RouteLLM在autodl上4090D的部署.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/RouteLLM%E5%9C%A8autodl%E4%B8%8A4090D%E7%9A%84%E9%83%A8%E7%BD%B2.jpg)
 
 
 
@@ -211,9 +213,9 @@ APGR的计算公式为APGR=(row["AUC"] - weak_auc) / (strong_auc - weak_auc)， 
 
 计算APGR与CPT指标可以参考RouteLLM里的https://github.com/lm-sys/RouteLLM/blob/main/routellm/evals/evaluate.py内容，里面也有详细把测试APGR与CPT的内容用代码进行了表达；同时也可以阅览一下RouteLLM给出的训练路由器模型Causal LLM并在GSM8K测试数据集上进行测试的代码https://github.com/anyscale/llm-router/blob/main/README.ipynb，里面最后要测试出CPT与APGR指标体现在IN[13]即第十三行指令：!python -m routellm.evals.evaluate --config config.example.yaml --routers random causal_llm --benchmark gsm8k也可以进行参考，因为作者也是使用脚本调用了RouteLLM代码文件的evaluate.py跑出相关指标。相关的代码块可以参考evaluate.py的以下内容：
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\CPT与perfomance指标表达.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/CPT%E4%B8%8Eperfomance%E6%8C%87%E6%A0%87%E8%A1%A8%E8%BE%BE.jpg)
 
-![](C:\Users\Administrator\Desktop\Large model routing experiment requirements\png\APGR代码内容.jpg)
+![](https://github.com/sky666-glitch/Ragrouter-requirements-recurrent-hope666/blob/master/png/APGR%E4%BB%A3%E7%A0%81%E5%86%85%E5%AE%B9.jpg)
 
 ## 实验步骤说明：
 
