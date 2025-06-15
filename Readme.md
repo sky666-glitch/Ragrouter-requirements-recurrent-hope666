@@ -2,7 +2,7 @@
 
 # 实验交付要求
 
-实验交付需求：做的各个实验都需要提供日志比如打出log这样来进行证明，类似：https://github.com/anyscale/llm-router/blob/main/README.ipynb里面的过程，特别是论文里提及的六个实验，一定要交付出日志。
+实验交付需求：做的各个实验都需要提供日志比如打出log这样来进行证明，类似：https://github.com/anyscale/llm-router/blob/main/README.ipynb里面的过程，特别是论文里提及的六个实验，一定要交付出实验日志（类似复现实验的log供检查）。
 
 ## 实验要求概述
 
@@ -247,4 +247,4 @@ APGR的计算公式为APGR=(row["AUC"] - weak_auc) / (strong_auc - weak_auc)， 
 
 2.消融实验：在MMLU测试数据集上，做四项消融实验，分别为多來源資料融合實現資料增強與否實驗對比和資料採樣與否實驗對比和語義句法特徵提取與否實驗對比以及搭建 RAG 框架與否實驗對比这四项消融实验。
 
-注：我这边的实验交付需求是做的各个实验都需要提供日志比如打出log这样来进行证明，类似：https://github.com/anyscale/llm-router/blob/main/README.ipynb里面的过程，特别是论文里提及的六个实验，一定要交付出日志。
+注：我这边的实验交付需求是做的各个实验都需要提供日志比如打出log这样来进行证明，类似：https://github.com/anyscale/llm-router/blob/main/README.ipynb里面的过程，特别是论文里提及的六个实验，一定要交付出日志（类似复现实验的log供检查）。
